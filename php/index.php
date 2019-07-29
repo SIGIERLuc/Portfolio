@@ -142,20 +142,36 @@ $array = get_project_id($connect);
         <div class="container">
             <div class="row wip">
                 <div class="col-md-12">
-                    <div id="gris"></div>
+                    <!-- <div id="gris"></div> -->
                     <h2>
-                        Me contacter (Work in Progress)
+                        Me contacter
                     </h2>
-                    <input type="text" name="name" placeholder="Nom">
-                    <input type="text" name="email" placeholder="Email">
-                    <input type="text" name="subject" placeholder="Sujet">
-                    <textarea placeholder="Votre message" name="message" id="message" rows="10" cols="50"></textarea>
-                    <a href="#">
-                        <button>
-                            Envoyer
-                        </button>
-                    </a>
+                    <form method="post">
+                        <input type="text" name="name" placeholder="Nom">
+                        <input type="text" name="email" placeholder="Email">
+                        <input type="text" name="subject" placeholder="Sujet">
+                        <textarea placeholder="Votre message" name="message" id="message" rows="10" cols="50"></textarea>
+
+                        <button type="submit">
+                                Envoyer le mail
+                            </button>
+                    </form>
+                    <?php
+                    if (isset($_POST['message'])) {
+                        $position_arobase = strpos($_POST['email'], '@');
+                        if ($position_arobase === false) {
+                            echo '<p>Votre email doit comporter un arobase.</p>';
+                        } else {
+                            $retour = mail('loakky@gmail.com', $_POST['name'] . $_POST['email'] . $_POST['subject'], $_POST['message']);
+                            if ($retour)
+                                echo '<p>Votre message a été envoyé.</p>';
+                            else
+                                echo '<p>Erreur.</p>';
+                        }
+                    }
+                    ?>
                 </div>
+
             </div>
         </div>
     </section>
@@ -174,7 +190,7 @@ $array = get_project_id($connect);
                     </p>
                 </div>
                 <div class="col-md-4">
-                    
+
                 </div>
                 <div class="col-md-4">
                     <h4>
