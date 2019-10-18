@@ -197,7 +197,7 @@ $array = get_project_id($connect);
                         Mes réseaux
                     </h4>
                     <a href="https://www.facebook.com/luc.sigier" target="_blank"><img src="./img/footer/facebook.png"></a>
-                    <a href="https://twitter.com/LucSigier" target="_blank"><img src="./img/footer/twitter.png"></a>
+                    
                     <a href="https://www.linkedin.com/in/luc-sigier-244b72148/" target="_blank"><img src="./img/footer/linkedin.png"></a>
                     <a href="mailto:lucsigier@gmail.com" target="_blank"><img src="./img/footer/gmail.png"></a>
                 </div>
