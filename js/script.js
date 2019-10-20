@@ -31,3 +31,36 @@ $('.navbar-nav>li>a').on('click', function () {
 $("#collapsedProject div:first-child").addClass("show");
 
 
+
+$(document).ready(function () {
+    $('#submitButton').click(function (e) {
+        var userinput = $("#email").val();
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
+        if (pattern.test(userinput)) {
+
+            var name = $("#name").val();
+            var email = $("#email").val();
+            var subject = $("#subject").val();
+            var message = $("#message").val();
+
+            $.post("./php/mail.php", {
+                name: name,
+                email: email,
+                subject: subject,
+                message: message
+            }).done(function () {
+                $('#name').val("");
+                $('#email').val("");
+                $('#subject').val("");
+                $('#message').val("");
+                $('#confirmation').html("Votre message a bien été envoyé");
+            });
+            e.preventDefault();
+        }
+        else {
+            $('#confirmation').html("Votre adresse Email n'est pas au bon format");
+        }
+    });
+});
+
+

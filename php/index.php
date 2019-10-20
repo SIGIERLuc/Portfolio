@@ -146,30 +146,20 @@ $array = get_project_id($connect);
                     <h2>
                         Me contacter
                     </h2>
-                    <form method="post">
-                        <input type="text" name="name" placeholder="Nom">
-                        <input type="text" name="email" placeholder="Email">
-                        <input type="text" name="subject" placeholder="Sujet">
+                    <form id="formContact" method="post">
+                        <input type="text" id="name" placeholder="Nom">
+                        <input type="text" id="email" placeholder="Email">
+                        <input type="text" id="subject" placeholder="Sujet">
                         <textarea placeholder="Votre message" name="message" id="message" rows="10" cols="50"></textarea>
 
-                        <button type="submit">
-                                Envoyer le mail
-                            </button>
+                        <button id="submitButton" type="button">
+                            Envoyer le mail
+                        </button>
+                        <p id="confirmation">
+
+                        </p>
                     </form>
-                    <?php
-                    if (isset($_POST['message'])) {
-                        $position_arobase = strpos($_POST['email'], '@');
-                        if ($position_arobase === false) {
-                            echo '<p>Votre email doit comporter un arobase.</p>';
-                        } else {
-                            $retour = mail('loakky@gmail.com', $_POST['name'] . $_POST['email'] . $_POST['subject'], $_POST['message']);
-                            if ($retour)
-                                echo '<p>Votre message a été envoyé.</p>';
-                            else
-                                echo '<p>Erreur.</p>';
-                        }
-                    }
-                    ?>
+
                 </div>
 
             </div>
@@ -197,7 +187,7 @@ $array = get_project_id($connect);
                         Mes réseaux
                     </h4>
                     <a href="https://www.facebook.com/luc.sigier" target="_blank"><img src="./img/footer/facebook.png"></a>
-                    
+
                     <a href="https://www.linkedin.com/in/luc-sigier-244b72148/" target="_blank"><img src="./img/footer/linkedin.png"></a>
                     <a href="mailto:lucsigier@gmail.com" target="_blank"><img src="./img/footer/gmail.png"></a>
                 </div>

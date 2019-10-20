@@ -11,9 +11,14 @@ header("Location: https://portfolio-sigier.com/");
 
 <body>
     <?php
-    $retour = mail($_POST['email'], $_POST['subject'], $_POST['message']);
-    if ($retour) {
-        echo '<p>Votre message a bien été envoyé !</p>';
+    include 'index.php';
+
+    $Name = $_POST['name'];
+    $Email = $_POST['email'];
+    $Subject = $_POST['subject'];
+    $Message = $_POST['message'];
+    if (isset($_POST['message'])) {
+        $retour = mail('loakky@gmail.com', $_POST['name'] . $_POST['email'] . $_POST['subject'], $_POST['message']);
     }
     ?>
 </body>
