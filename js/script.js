@@ -38,10 +38,10 @@ $(document).ready(function () {
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
         if (pattern.test(userinput)) {
 
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var subject = $("#subject").val();
-            var message = $("#message").val();
+            var name = $("#name").val().toString();
+            var email = $("#email").val().toString();
+            var subject = $("#subject").val().toString();
+            var message = $("#message").val().toString();
 
             $.post("./php/mail.php", {
                 name: name,
