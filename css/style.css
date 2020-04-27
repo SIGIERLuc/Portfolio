@@ -103,6 +103,10 @@ h5 {
     padding: 75px 0 50px 0;
 }
 
+.hidden {
+    display: none;
+}
+
 #project {
     background-color: #ccc;
     background-image: url("../img/team-background.jpg");

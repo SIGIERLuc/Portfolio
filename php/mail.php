@@ -18,7 +18,7 @@ header("Location: https://portfolio-sigier.com/");
     $Subject = $_POST['subject'];
     $Message = $_POST['message'];
     if (isset($_POST['message'])) {
-        $retour = mail('loakky@gmail.com', $_POST['name'] . $_POST['email'] . $_POST['subject'], $_POST['message']);
+        $retour = mail('loakky@gmail.com', strval($Name) . strval($Email) . strval($Subject), strval($Message));
     }
     ?>
 </body>

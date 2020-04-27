@@ -31,10 +31,9 @@ $('.navbar-nav>li>a').on('click', function () {
 $("#collapsedProject div:first-child").addClass("show");
 
 
-
 $(document).ready(function () {
     $('#submitButton').click(function (e) {
-        var userinput = $("#email").val();
+        var userinput = $("#email").val().toString();
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i
         if (pattern.test(userinput)) {
 
@@ -64,3 +63,6 @@ $(document).ready(function () {
 });
 
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+    $("#projectIntro").addClass("hidden");
+};

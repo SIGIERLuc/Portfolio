@@ -7,7 +7,7 @@ $array = get_project_id($connect);
 
 <html>
 <meta charset="UTF-8">
-
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <head>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -108,7 +108,7 @@ $array = get_project_id($connect);
                 </div>
             </div>
             <div class="projectContainer">
-                <p>
+                <p id="projectIntro">
                     A travers ces projets j'ai appris de nouvelles compétences et affiné certaines que je possedais
                     déjà.<br>
                     Certain projets ne sont pas visuels mais un lien vers mon github vous permettra de voir le travail
